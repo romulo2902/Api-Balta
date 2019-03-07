@@ -11,6 +11,9 @@ const router = express.Router();
 //Conecta ao banco
 mongoose.connect('mongodb://balta:teste123@ds012889.mlab.com:12889/ndstr1')
 
+//Carrega os Models
+const Product = require('./models/product');
+
 
 //Carrega as Rotas
 const indexRoute = require('./routes/index-route');
