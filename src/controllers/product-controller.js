@@ -10,7 +10,7 @@ exports.post = (req, res, next) => {
             res.status(201).send({
                 message:'Produto cadastrado com sucesso'
             });
-    }).catch(e => {
+    }).catch(e => { console.log(e)
         res.status(400).send({
             message:'Falha no  cadastrado do produto', 
             data: e
@@ -32,3 +32,4 @@ exports.delete = ('/', (req, res, next) => {
     res.status(200).send(req.body);
 
 });
+
