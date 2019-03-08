@@ -29,7 +29,7 @@ app.use('/products', productRoute);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`The app is up and running at port ${PORT}`);
+  console.log(`API Rodando na porta ${PORT}`);
 });
 
 module.exports = app;
