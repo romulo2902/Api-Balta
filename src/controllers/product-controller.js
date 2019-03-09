@@ -78,6 +78,7 @@ exports.put = (req, res, next) => {
             $set: {
                 title: req.body.title,
                 description: req.body.description,
+                slug: req.body.slug,
                 price: req.body.price
             }
         }).then(x => {
@@ -92,8 +93,19 @@ exports.put = (req, res, next) => {
         });
 };
 
-exports.delete = ('/', (req, res, next) => {
-    res.status(200).send(req.body);
+exports.delete = (req, res, next) => {
+    Product
+        .findOneAndRemove(req.params.id)
+        .then(x => {
+            res.status(200).send({
+                message: 'Produto removido com sucesso!'
+            });
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao remover o Produto',
+                data: e
+            });
+        });
 
-});
+};
 
