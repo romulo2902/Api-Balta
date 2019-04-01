@@ -6,7 +6,7 @@ exports.get = async() => {
     const res = await Product
         .find({
             active: true
-        }, 'title price slug');
+        }, 'title description price slug');
         return res;
 }
 
