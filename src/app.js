@@ -15,7 +15,8 @@ mongoose.connect('mongodb://balta:teste123@ds012889.mlab.com:12889/ndstr1')
 
 //Carrega os Models
 const Product = require('./models/product');
-
+const Customer = require('./models/customer');
+const Order = require('./models/order');
 
 //Carrega as Rotas
 const indexRoute = require('./routes/index-route');
